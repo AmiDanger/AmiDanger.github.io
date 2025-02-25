@@ -40,11 +40,25 @@
 </head>
 <body>
   <!-- Logout button -->
-  <a href="index.html" class="logout-btn">Logout</a>
+  <a href="#" class="logout-btn">Logout</a>
 
   <!-- Protected content -->
   <div class="content">
     <h1>YOO ARCHISMAN!!!</h1>
   </div>
+
+  <script>
+    // Redirect to login if not logged in
+    if (localStorage.getItem('isLoggedIn') !== 'true') {
+      window.location.href = 'login.html';
+    }
+
+    // Attach logout event handler
+    document.querySelector('.logout-btn').addEventListener('click', function(e) {
+      e.preventDefault();
+      localStorage.removeItem('isLoggedIn');
+      window.location.href = 'index.html';
+    });
+  </script>
 </body>
 </html>
