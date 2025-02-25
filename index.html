@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under Maintenance</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .marquee {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff0000;
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            position: absolute;
+            top: 20px;
+        }
+        .marquee span {
+            display: inline-block;
+            animation: marquee 5s linear infinite;
+        }
+        @keyframes marquee {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
+        }
+        .construction {
+            font-size: 40px;
+            font-weight: bold;
+            color: #333;
+            position: absolute;
+            bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="marquee">
+        <span>This site is under maintenance and will be activated in 2-3 days.</span>
+    </div>
+
+    <div class="construction">
+        🚧 Site Under Construction 🚧
+    </div>
+
+</body>
+</html>
