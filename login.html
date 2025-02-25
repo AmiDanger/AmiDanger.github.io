@@ -64,7 +64,9 @@
       var username = document.getElementById('username').value;
       var password = document.getElementById('password').value;
       // Validate credentials
-      if (username === 'adminarchis' && password === 'piratearchis') {
+      if (username === 'adminarchis' && password === 'archistutan') {
+        // Set a flag in localStorage
+        localStorage.setItem('isLoggedIn', 'true');
         window.location.href = 'dashboard.html';
       } else {
         document.getElementById('error').innerText = 'Invalid username or password';
