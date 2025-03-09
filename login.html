@@ -48,7 +48,6 @@
   </style>
 </head>
 <body>
-
   <div class="login-container">
     <h2>Login</h2>
     <form id="loginForm">
@@ -60,25 +59,18 @@
   </div>
 
   <script>
-    // Redirect if already logged in
-    if (localStorage.getItem('isLoggedIn') === 'true') {
-      window.location.href = 'dashboard.html';
-    }
-
     document.getElementById('loginForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      var username = document.getElementById('username').value.trim();
-      var password = document.getElementById('password').value.trim();
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
 
-      // Validate credentials
-      if (username === 'adminarchis' && password === 'archistutan') {
-        localStorage.setItem('isLoggedIn', 'true');
+      if (username === 'adminarchis' && password === 'piratearchis') {
+        sessionStorage.setItem('isLoggedIn', 'true');
         window.location.href = 'dashboard.html';
       } else {
         document.getElementById('error').innerText = 'Invalid username or password';
       }
     });
   </script>
-
 </body>
 </html>
