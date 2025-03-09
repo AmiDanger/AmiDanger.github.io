@@ -11,6 +11,7 @@
       margin: 0;
       padding: 0;
       position: relative;
+      text-align: center;
     }
     .logout-btn {
       position: absolute;
@@ -28,6 +29,7 @@
     }
     .content {
       display: flex;
+      flex-direction: column;
       height: 100vh;
       justify-content: center;
       align-items: center;
@@ -36,39 +38,49 @@
       font-size: 50px;
       font-weight: bold;
     }
-    .footer-text {
-      color: green;
-      text-align: center;
-      padding: 20px;
-      font-size: 20px;
+    .visit-link {
+      margin-top: 20px;
+    }
+    .visit-link a {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .visit-link a:hover {
+      background-color: #0056b3;
     }
   </style>
 </head>
 <body>
   <!-- Logout button -->
-  <a href="#" class="logout-btn">Logout</a>
+  <a href="#" class="logout-btn" id="logout">Logout</a>
 
   <!-- Protected content -->
   <div class="content">
     <h1>YOO ARCHISMAN!!!</h1>
-  </div>
 
-  <!-- Footer text -->
-  <div class="footer-text">
-    Also visit devpirate.rocks
+    <!-- Also Visit Section (Only devpirate.rocks) -->
+    <div class="visit-link">
+      <p><strong>Also Visit:</strong></p>
+      <a href="https://devpirate.rocks" target="_blank">devpirate.rocks</a>
+    </div>
   </div>
 
   <script>
-    // Redirect to login if not logged in
-    if (localStorage.getItem('isLoggedIn') !== 'true') {
+    // Redirect to login page if not authenticated
+    if (!sessionStorage.getItem('isLoggedIn')) {
       window.location.href = 'login.html';
     }
 
-    // Attach logout event handler
-    document.querySelector('.logout-btn').addEventListener('click', function(e) {
+    // Logout functionality
+    document.getElementById('logout').addEventListener('click', function(e) {
       e.preventDefault();
-      localStorage.removeItem('isLoggedIn');
-      window.location.href = 'index.html';
+      sessionStorage.removeItem('isLoggedIn');  // Clear session
+      window.location.href = 'login.html';  // Redirect to login page
     });
   </script>
 </body>
