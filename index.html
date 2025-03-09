@@ -3,75 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Under Maintenance</title>
+  <title>Site Under Maintenance</title>
   <style>
     body {
-      text-align: center;
       font-family: Arial, sans-serif;
-      background-color: #f8f9fa;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      position: relative;
+      background: #f0f0f0;
+      text-align: center;
+      padding: 50px;
     }
-    .marquee {
+    .hover-text {
       font-size: 24px;
       font-weight: bold;
-      color: #ff0000;
-      width: 100%;
-      overflow: hidden;
-      white-space: nowrap;
-      position: absolute;
-      top: 20px;
-      left: 0;
+      color: red;
+      animation: moveText 3s linear infinite;
     }
-    .marquee span {
-      display: inline-block;
-      animation: marquee 5s linear infinite;
+    @keyframes moveText {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
     }
-    @keyframes marquee {
-      from { transform: translateX(100%); }
-      to { transform: translateX(-100%); }
-    }
-    .construction {
+    .bold-text {
       font-size: 40px;
       font-weight: bold;
-      color: #333;
-      position: absolute;
-      bottom: 20px;
+      margin-top: 30px;
     }
-    .login-btn {
-      position: absolute;
-      top: 20px;
-      right: 20px;
+    .login-btn, .visit-link {
+      display: inline-block;
+      margin: 20px;
       padding: 10px 20px;
       background-color: #007bff;
-      color: #fff;
+      color: white;
       text-decoration: none;
       border-radius: 5px;
-      font-weight: bold;
+      font-size: 18px;
     }
-    .login-btn:hover {
+    .login-btn:hover, .visit-link:hover {
       background-color: #0056b3;
     }
   </style>
 </head>
 <body>
-  <!-- Marquee text -->
-  <div class="marquee">
-    <span>This site is under maintenance and will be activated in 2-3 decades. Owner - Archis.</span>
-  </div>
+  <div class="hover-text">This site is under maintenance and will be activated in 2-3 days.</div>
+  <div class="bold-text">SITE UNDER CONSTRUCTION</div>
 
-  <!-- Login button -->
   <a href="login.html" class="login-btn">Login</a>
-
-  <!-- Under construction message -->
-  <div class="construction">
-    🚧 Site Under Construction 🚧
-  </div>
+  <a href="https://devpirate.rocks" class="visit-link" target="_blank">Visit devpirate.rocks</a>
 </body>
 </html>
